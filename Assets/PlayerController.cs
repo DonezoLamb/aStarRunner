@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public float maxspeed = 0;
     char prevButton;
 
-
+    //affects time to reach desired speed
     public float accel = 0;
     float msChangeTime;
     float msChangeTimeReset=1;
@@ -30,58 +30,65 @@ public class PlayerController : MonoBehaviour
     float jumpTimeReset;
 
     //here to prevent bug when closing the menu and jumps....
-    public bool pauseBuffer = false;
+    //TODO: add more code/ or a new approach
+    public bool gamePaused = false;//temp?
+    public bool uiDisableJump = false;
+
+
     void Start()
     {
         movespeed = defaultSpeed;
         playerBody = gameObject.GetComponent<Rigidbody2D>();
         jumpTimeReset = jumpTime;
-    }
+    }//sets variable resets and gets the players RB
 
     // Update is called once per frame
     void Update()
     {
-        //modifies running speed
-        //change to take less lines and ignore redundant calls            
-        if (Input.GetKey(KeyCode.A) && minSpeed <= movespeed)          
+        if (!gamePaused)
         {
-            ModifyMovespeed(movespeed, minSpeed, 'a');
-        }
-        else if (Input.GetKey(KeyCode.D) && maxspeed >= movespeed)
-        {
-            ModifyMovespeed(movespeed, maxspeed, 'd');
-        }
-        else if(!Input.GetKey(KeyCode.A)&& !Input.GetKey(KeyCode.A)) 
-        {
-            ModifyMovespeed(movespeed, defaultSpeed,'n');
-        }
+            //modifies running speed
+            //change to take less lines and ignore redundant calls            
+            if (Input.GetKey(KeyCode.A) && minSpeed <= movespeed)
+            {
+                ModifyMovespeed(movespeed, minSpeed, 'a');
+            }
+            else if (Input.GetKey(KeyCode.D) && maxspeed >= movespeed)
+            {
+                ModifyMovespeed(movespeed, maxspeed, 'd');
+            }
+            else if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.A))
+            {
+                ModifyMovespeed(movespeed, defaultSpeed, 'n');
+            }
 
-        //jump code, to my knowledge works as intended ATM
-        if (Input.GetKeyDown(KeyCode.Space) && OnRunnable() && !pauseBuffer)
-        {
-             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpforce);
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && OnRunnable() && pauseBuffer)
-        {
-            Debug.Log("seen");
-            pauseBuffer = false;
-        }
-        else if (Input.GetKey(KeyCode.Space) && jumpTime > 0f && !OnRunnable())
-        {
-            jumpTime -= Time.deltaTime;
-            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpforce);
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            jumpTime = 0;
+            //jump code, to my knowledge works as intended ATM
+            if (Input.GetKeyDown(KeyCode.Space) && OnRunnable() && !uiDisableJump)
+            {
+                playerBody.velocity = new Vector2(playerBody.velocity.x, jumpforce);
+            }
+            else if (Input.GetKey(KeyCode.Space) && jumpTime > 0f && !OnRunnable() && !uiDisableJump)
+            {
+                jumpTime -= Time.deltaTime;
+                playerBody.velocity = new Vector2(playerBody.velocity.x, jumpforce);
+            }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                jumpTime = 0;
+            }
+            else if(!Input.GetKey(KeyCode.Space))
+            {
+                uiDisableJump = false;
+            }//prevents pause jump bugs
         }
     }
+
     void FixedUpdate()
     {
         playerBody.velocity = new Vector2(movespeed, playerBody.velocity.y);
-    }
+    }//moves the player, in fixedUpdate speed is consistent
 
-    //checks to see if players feet is on the ground, enables jumping
+    
     bool OnRunnable()
     {        
         Collider2D grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
@@ -94,7 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             return false;
         }
-    }
+    }//checks to see if players feet is on the ground, enables jumping, called when player tries to jump
 
     void ModifyMovespeed(float currentMS, float msGoal, char curButton)
     {
@@ -108,5 +115,5 @@ public class PlayerController : MonoBehaviour
 
 
         prevButton = curButton;
-    }
+    }//input (a or d), changes player speed, gets comands from Update
 }

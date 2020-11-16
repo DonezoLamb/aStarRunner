@@ -42,7 +42,7 @@ public class MenuController : MonoBehaviour
         pauseButReset = PauseButOne;
         thisScene = SceneManager.GetActiveScene();
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !playerDead && !initialPause)
@@ -60,7 +60,8 @@ public class MenuController : MonoBehaviour
         {
             DeathMenu();
         }
-    }
+    }//sets the death pause and normal pauses
+
     public void DeathMenu()
     {
         //activates the death menu
@@ -74,48 +75,15 @@ public class MenuController : MonoBehaviour
         deathSet = true;
         AdjustScoreText();
     }
-    public void Resume()//TODO debuging the unpause jump
-    {
-        //restarts game by normilizing timescale and closing ui
-        gamePaused = false;
-        pausedMenuUI.SetActive(false);
-        FindObjectOfType<playerObsSpawner>().gamePaused = false;
-        Time.timeScale = 1f;
-    }
-
-    public void Pause()
-    {
-        //pauses game by enabling ui element and changing timescale
-        FindObjectOfType<PlayerController>().pauseBuffer = true;
-        FindObjectOfType<playerObsSpawner>().gamePaused = true;
-        gamePaused = true;
-        pausedMenuUI.SetActive(true);
-        EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-        PauseButOne.Select();
-        Time.timeScale = 0f;
-    }
-    public void ShowControls()
-    {
-        Debug.Log("i should show how to play");
-    }//TODO: add implementation
-    public void RestartScene()
-    {
-        //reload scene and corrects the timescale
-        FindObjectOfType<ScoreCounter>().CheckHighScore();
-        Resume();
-        SceneManager.LoadScene(thisScene.buildIndex);
-    }
 
     public void QuitApp()
     {
-
-        //closes the app
         FindObjectOfType<ScoreCounter>().CheckHighScore();
         Debug.Log("quitting game");
         Application.Quit();
-    }
+    }//Closes the game
 
-    public void ReturnToMain()//TODO: inplement this
+    public void ReturnToMain()//TODO: implement this, i dont remember what this is for, remove?
     {
         Debug.Log("should load new scene");
     }
@@ -131,24 +99,69 @@ public class MenuController : MonoBehaviour
         FindObjectOfType<ScoreCounter>().CheckHighScore();
         highScore = PlayerPrefs.GetInt("HighScore", 0).ToString();
         highScoreTMP.text = HighScoreText + highScore;
+    }//Change the score displayed when player dies
+
+    public void ShowControls()
+    {
+        Debug.Log("i should show how to play");
+    }//TODO: add implementation
+
+    public void RestartScene()
+    {
+        //reload scene and corrects the timescale
+        FindObjectOfType<ScoreCounter>().CheckHighScore();
+        Resume();
+        SceneManager.LoadScene(thisScene.buildIndex);
+    }//reloads the scene
+
+    //ABOVE ALL KNOWN BUGS RESOLVED-----------------------------------------------------------------------------
+    public void Resume()
+    {
+        //restarts game by normilizing timescale, reabling player functions and closing ui
+        gamePaused = false;
+        pausedMenuUI.SetActive(false);
+        FindObjectOfType<playerObsSpawner>().gamePaused = false;
+        FindObjectOfType<PlayerController>().gamePaused = false;
+        Time.timeScale = 1f;
+    }
+
+    public void Pause()
+    {
+        //pauses game by enabling ui element and changing timescale
+        FindObjectOfType<playerObsSpawner>().gamePaused = true;
+        FindObjectOfType<PlayerController>().gamePaused = true;
+        FindObjectOfType<PlayerController>().uiDisableJump = true;
+
+        gamePaused = true;
+        pausedMenuUI.SetActive(true);
+        EventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+        PauseButOne.Select();
+        Time.timeScale = 0f;
     }
 
     public void InitUnpause()
     {
         Resume();
+        //additional commands besides the resume functions
         scoreUI.SetActive(true);
         chargeUI.SetActive(true);
         ControlsUI.SetActive(false);
         initialPause = false;
-    }//TODO jump pug is back bitches
+        
+    }
 
     public void InitControlsPause(Button initButton)
     {
+        //sets up the pause and control UI
         scoreUI.SetActive(false);
         chargeUI.SetActive(false);
         ControlsUI.SetActive(true);
         initButton.Select();
         initialPause = true;
         Time.timeScale = 0;
+
+        //fixes pause jump bugs
+        FindObjectOfType<PlayerController>().gamePaused = true;
+        FindObjectOfType<PlayerController>().uiDisableJump = true;
     }
 }

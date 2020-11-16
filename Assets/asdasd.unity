@@ -3152,7 +3152,8 @@ MonoBehaviour:
   accel: 20
   jumpforce: 9
   jumpTime: 0.2
-  pauseBuffer: 0
+  gamePaused: 0
+  uiDisableJump: 0
 --- !u!114 &1219814845
 MonoBehaviour:
   m_ObjectHideFlags: 0
