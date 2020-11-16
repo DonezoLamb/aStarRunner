@@ -19,6 +19,7 @@ public class MenuController : MonoBehaviour
     public Scene mainMenu;
     public Scene thisScene;
     public bool playerDead = false;
+    bool initialPause = false;
     bool deathSet = false;
     public Button PauseButOne;
     Button pauseButReset;
@@ -44,7 +45,7 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !playerDead)
+        if (Input.GetKeyDown(KeyCode.Escape) && !playerDead && !initialPause)
         {
             if (gamePaused)
             {
@@ -138,5 +139,16 @@ public class MenuController : MonoBehaviour
         scoreUI.SetActive(true);
         chargeUI.SetActive(true);
         ControlsUI.SetActive(false);
+        initialPause = false;
     }//TODO jump pug is back bitches
+
+    public void InitControlsPause(Button initButton)
+    {
+        scoreUI.SetActive(false);
+        chargeUI.SetActive(false);
+        ControlsUI.SetActive(true);
+        initButton.Select();
+        initialPause = true;
+        Time.timeScale = 0;
+    }
 }
