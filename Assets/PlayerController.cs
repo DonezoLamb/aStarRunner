@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && OnRunnable() && pauseBuffer)
         {
+            Debug.Log("seen");
             pauseBuffer = false;
         }
         else if (Input.GetKey(KeyCode.Space) && jumpTime > 0f && !OnRunnable())
@@ -74,7 +75,6 @@ public class PlayerController : MonoBehaviour
         {
             jumpTime = 0;
         }
-        //jump code end
     }
     void FixedUpdate()
     {

@@ -15,6 +15,7 @@ public class MenuController : MonoBehaviour
     public GameObject deathMenuUI;
     public GameObject scoreUI;
     public GameObject chargeUI;
+    public GameObject ControlsUI;
     public Scene mainMenu;
     public Scene thisScene;
     public bool playerDead = false;
@@ -114,7 +115,6 @@ public class MenuController : MonoBehaviour
     }
 
     public void ReturnToMain()//TODO: inplement this
-
     {
         Debug.Log("should load new scene");
     }
@@ -131,4 +131,12 @@ public class MenuController : MonoBehaviour
         highScore = PlayerPrefs.GetInt("HighScore", 0).ToString();
         highScoreTMP.text = HighScoreText + highScore;
     }
+
+    public void InitUnpause()
+    {
+        Resume();
+        scoreUI.SetActive(true);
+        chargeUI.SetActive(true);
+        ControlsUI.SetActive(false);
+    }//TODO jump pug is back bitches
 }

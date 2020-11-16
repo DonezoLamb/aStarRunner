@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6100734E-3241-74D7-5009-19BA3B75165B}</ProjectGuid>
+    <ProjectGuid>{3640011A-FD74-1956-9CAF-D47747E091C7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>AstarPathfindingProjectEditor</AssemblyName>
@@ -85,16 +85,16 @@
     <None Include="Assets\AstarPathfindingProject\Editor\AstarPathfindingProjectEditor.asmdef" />
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\NavmeshOutline.shader" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Misc Programs/Unity Editors/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -286,10 +286,10 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Misc Programs/Unity Editors/2019.2.18f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -648,11 +648,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{5FB1D939-81F6-2E5A-FE7B-B31D4BD473F8}</Project>
+      <Project>{0F0CF5FF-6950-BC71-E675-36DFBE35FFDC}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
     <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{D073285C-FA17-42A7-5955-F9438AB799AF}</Project>
+      <Project>{357C68BF-D884-2857-D8BC-D4E617710FDD}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
   </ItemGroup>

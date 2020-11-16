@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{B2B58FB2-4462-6B0C-A872-40DD957E5FE0}</ProjectGuid>
+    <ProjectGuid>{E99A98AB-6AEF-4890-689C-D9908B62D225}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -67,6 +67,7 @@
     <Compile Include="Assets\DestroyPlayer.cs" />
     <Compile Include="Assets\EnemyAI.cs" />
     <Compile Include="Assets\FollowPlayerOnX.cs" />
+    <Compile Include="Assets\InitalLaunch.cs" />
     <Compile Include="Assets\MenuController.cs" />
     <Compile Include="Assets\MovePlatform.cs" />
     <Compile Include="Assets\PlatformGenerator.cs" />
@@ -94,34 +95,34 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Misc Programs/Unity Editors/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -301,7 +302,7 @@
       <HintPath>D:/Misc Programs/Unity Editors/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Misc Programs/Unity Editors/2019.2.18f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -651,15 +652,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{5FB1D939-81F6-2E5A-FE7B-B31D4BD473F8}</Project>
+      <Project>{0F0CF5FF-6950-BC71-E675-36DFBE35FFDC}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
     <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{D073285C-FA17-42A7-5955-F9438AB799AF}</Project>
+      <Project>{357C68BF-D884-2857-D8BC-D4E617710FDD}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{6100734E-3241-74D7-5009-19BA3B75165B}</Project>
+      <Project>{3640011A-FD74-1956-9CAF-D47747E091C7}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>

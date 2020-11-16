@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5FB1D939-81F6-2E5A-FE7B-B31D4BD473F8}</ProjectGuid>
+    <ProjectGuid>{0F0CF5FF-6950-BC71-E675-36DFBE35FFDC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>AstarPathfindingProject</AssemblyName>
@@ -181,10 +181,10 @@
     <None Include="Assets\AstarPathfindingProject\Readme.txt" />
     <None Include="Assets\AstarPathfindingProject\link.xml" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Misc Programs/Unity Editors/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -376,7 +376,7 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/New Unity Project/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>D:/Games/Unity Projects/Infinite Runner 2020/aStarRunner/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Misc Programs/Unity Editors/2019.2.18f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
