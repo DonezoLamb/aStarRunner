@@ -2334,8 +2334,10 @@ MonoBehaviour:
   playerDead: 0
   PauseButOne: {fileID: 1247990238}
   DeathButOne: {fileID: 807556185}
+  controlUiButton: {fileID: 1870348614}
   deathScoreTMP: {fileID: 284210145}
   highScoreTMP: {fileID: 778317274}
+  controlButtonTMP: {fileID: 1553318011}
   EventSystem: {fileID: 1295013575}
 --- !u!114 &871416302
 MonoBehaviour:
@@ -2349,7 +2351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538686f7225fe844d872a96e36a13e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initStart: {fileID: 1870348614}
 --- !u!1 &986174673
 GameObject:
   m_ObjectHideFlags: 0

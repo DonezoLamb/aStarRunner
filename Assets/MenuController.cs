@@ -24,13 +24,16 @@ public class MenuController : MonoBehaviour
     public Button PauseButOne;
     Button pauseButReset;
     public Button DeathButOne;
+    public Button controlUiButton;
     
 
     //used to display ending score
     public TextMeshProUGUI deathScoreTMP;
     public TextMeshProUGUI highScoreTMP;
+    public TextMeshProUGUI controlButtonTMP;
     string deathText = "Your Final Score Was: ";
     string HighScoreText = "Your All Time Best Was: ";
+    string ResumeFromControlTxt = "Resume";
     string finalScore;
     string highScore;
 
@@ -104,7 +107,17 @@ public class MenuController : MonoBehaviour
     public void ShowControls()
     {
         Debug.Log("i should show how to play");
-    }//TODO: add implementation
+        //hide other UI elements score, menu and charge
+        initialPause = true;
+        pausedMenuUI.SetActive(false);
+        scoreUI.SetActive(false);
+        chargeUI.SetActive(false);
+
+        //open picture
+        ControlsUI.SetActive(true);
+        controlUiButton.Select();
+        controlButtonTMP.text = ResumeFromControlTxt;
+    }//TODO: add implementation, combine with inital controls func?
 
     public void RestartScene()
     {
@@ -150,13 +163,13 @@ public class MenuController : MonoBehaviour
         
     }
 
-    public void InitControlsPause(Button initButton)
+    public void InitControlsPause()
     {
         //sets up the pause and control UI
         scoreUI.SetActive(false);
         chargeUI.SetActive(false);
         ControlsUI.SetActive(true);
-        initButton.Select();
+        controlUiButton.Select();
         initialPause = true;
         Time.timeScale = 0;
 

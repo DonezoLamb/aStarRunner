@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InitalLaunch : MonoBehaviour
 {
-    public Button initStart;
     static bool firstLaunch = true;
 
     // Start is called before the first frame update
@@ -13,7 +12,7 @@ public class InitalLaunch : MonoBehaviour
     {
         if(firstLaunch)
         {
-            GetComponent<MenuController>().InitControlsPause(initStart);
+            GetComponent<MenuController>().InitControlsPause();
             firstLaunch = false;
         }
     }

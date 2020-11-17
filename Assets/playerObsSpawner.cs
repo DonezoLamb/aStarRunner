@@ -24,7 +24,6 @@ public class playerObsSpawner : MonoBehaviour
     void Start()
     {
         ShuffleOrder();
-        //TODO make it an image
         nextBlock.sprite = placeableBlock[index].GetComponent<SpriteRenderer>().sprite;
     }
 
@@ -35,9 +34,7 @@ public class playerObsSpawner : MonoBehaviour
         {
             //using charges and spawn block  
             if (Input.GetKeyDown(KeyCode.LeftShift) && curCharges>0)
-            {
-                Debug.Log("place block");
-                
+            {                
                 curCharges--;
                 chargeCounters.text = curCharges.ToString();
                 Instantiate(placeableBlock[index], transform.position, Quaternion.identity);
@@ -53,14 +50,11 @@ public class playerObsSpawner : MonoBehaviour
             }
             if (curTime<ChargeTime && curCharges<maxCharges)
             {
-                //Debug.Log("time go up");
                 barFill.fillAmount = curTime / ChargeTime;
                 curTime += Time.deltaTime;
             }
             else if (curTime >= ChargeTime && curCharges < maxCharges)
             {
-                //Debug.Log("charges go up");
-
                 curTime = 0;
                 curCharges++;
                 chargeCounters.text = curCharges.ToString();
