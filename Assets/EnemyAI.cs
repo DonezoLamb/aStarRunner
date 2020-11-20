@@ -90,9 +90,11 @@ public class EnemyAI : MonoBehaviour
         if (centerOfGrid+toSideOfGrid < transform.position.x + closeToEdge)
         {
             Debug.Log("activted");
-            centerOfGrid = transform.position.x + toSideOfGrid;
+            //keeps grid lined up with platforms on X axis
+            centerOfGrid = Mathf.Round((transform.position.x + toSideOfGrid) * 2f) *.5f +.25f;
             thisGrid.data.gridGraph.center.x = centerOfGrid;
-            thisGrid.data.gridGraph.center.y = transform.position.y;
+            //keeps grid lined up with the platform Y axis
+            thisGrid.data.gridGraph.center.y = Mathf.Round(transform.position.y *2f) *.5f;
             thisGrid.Scan();
         }
     }
