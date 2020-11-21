@@ -63,19 +63,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BlockSpawnerMovement.cs" />
-    <Compile Include="Assets\DestroyPlayer.cs" />
-    <Compile Include="Assets\EnemyAI.cs" />
-    <Compile Include="Assets\FollowPlayerOnX.cs" />
-    <Compile Include="Assets\InitalLaunch.cs" />
-    <Compile Include="Assets\MenuController.cs" />
-    <Compile Include="Assets\MovePlatform.cs" />
-    <Compile Include="Assets\PlatformGenerator.cs" />
-    <Compile Include="Assets\PlayerController.cs" />
-    <Compile Include="Assets\playerObsSpawner.cs" />
-    <Compile Include="Assets\RotateObj.cs" />
-    <Compile Include="Assets\ScoreCounter.cs" />
-    <Compile Include="Assets\tempscript.cs" />
+    <Compile Include="Assets\Scripts\BlockSpawnerMovement.cs" />
+    <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
+    <Compile Include="Assets\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\FollowPlayerOnX.cs" />
+    <Compile Include="Assets\Scripts\InitalLaunch.cs" />
+    <Compile Include="Assets\Scripts\MenuController.cs" />
+    <Compile Include="Assets\Scripts\MovePlatform.cs" />
+    <Compile Include="Assets\Scripts\PlatformGenerator.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\playerObsSpawner.cs" />
+    <Compile Include="Assets\Scripts\RotateObj.cs" />
+    <Compile Include="Assets\Scripts\ScoreCounter.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
